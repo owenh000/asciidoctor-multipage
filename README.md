@@ -3,6 +3,12 @@
 A multipage HTML converter for Asciidoctor—extends the Html5Converter to
 generate multiple HTML pages from the document tree.
 
+See also:
+
+- <https://github.com/asciidoctor/asciidoctor/issues/626>
+- <https://github.com/asciidoctor/asciidoctor-extensions-lab/pull/96>
+- <https://github.com/asciidoctor/asciidoctor-extensions-lab/blob/master/lib/multipage-html5-converter.rb>
+
 ## Features
 
 - Generates a root (top level) landing page with a list of child sections.
