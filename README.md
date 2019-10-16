@@ -38,6 +38,9 @@ generate multiple HTML pages from the document tree.
 
 Be sure to use Asciidoctor v1.5.7.1. Other versions are not yet supported.
 
+There is an extensive sample document under `test/` that showcases the
+extension's functionality.
+
 ```
 $ gem list asciidoctor$
 asciidoctor (1.5.7.1)
