@@ -45,3 +45,12 @@ asciidoctor (1.5.7.1)
 $ asciidoctor -r ./multipage-html5-converter.rb -b multipage_html5 \
     test/sample.adoc
 ```
+
+## Work needed
+
+If you are interested in working on this extension, please consider the
+following:
+
+- Update for use with the latest Asciidoctor release
+- Add support for footnotes
+- Add a test suite
