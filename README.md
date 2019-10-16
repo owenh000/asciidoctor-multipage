@@ -37,5 +37,6 @@ generate multiple HTML pages from the document tree.
 ## Usage
 
 ```
-$ asciidoctor -r ./multipage-html5-converter.rb -b multipage_html5 book.adoc
+$ asciidoctor -r ./multipage-html5-converter.rb -b multipage_html5 \
+    test/sample.adoc
 ```
