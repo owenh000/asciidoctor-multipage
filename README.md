@@ -26,7 +26,7 @@ generate multiple HTML pages from the document tree.
 
 ## Notes and limitations
 
-- Tested with Asciidoctor 1.5.7.1; inline anchors in unordered list items
+- Tested with Asciidoctor v1.5.7.1; inline anchors in unordered list items
   require the fix for asciidoctor issue #2812.
 - This extension is tightly coupled with Asciidoctor internals, and future
   changes in Asciidoctor may require updates here. Hopefully this extension
@@ -36,7 +36,12 @@ generate multiple HTML pages from the document tree.
 
 ## Usage
 
+Be sure to use Asciidoctor v1.5.7.1. Other versions are not yet supported.
+
 ```
+$ gem list asciidoctor$
+asciidoctor (1.5.7.1)
+
 $ asciidoctor -r ./multipage-html5-converter.rb -b multipage_html5 \
     test/sample.adoc
 ```
