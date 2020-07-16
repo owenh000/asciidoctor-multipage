@@ -76,3 +76,15 @@ If you interested in contributing to this project, thank you!
   also `owenh.net/support <https://owenh.net/support>`_)
 
 Thank you for your interest!
+
+## Copyright and License
+
+Copyright 2019-2020 Owen T. Heisler. MIT license.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+This source code may be used according to the terms of the MIT license. You
+should have received a copy of this license along with this program (see
+`LICENSE`).
