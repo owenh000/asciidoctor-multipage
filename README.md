@@ -72,8 +72,8 @@ If you interested in contributing to this project, thank you!
   using a GitHub pull request (please discuss before working on any large
   changes)
 - Open a new issue for a problem you've discovered or a possible enhancement
-- Sponsor my work through `GitHub Sponsors <https://github.com/owenh000>`_ (see
-  also `owenh.net/support <https://owenh.net/support>`_)
+- Sponsor my work through [GitHub Sponsors](https://github.com/owenh000) (see
+  also [owenh.net/support](https://owenh.net/support))
 
 Thank you for your interest!
 
