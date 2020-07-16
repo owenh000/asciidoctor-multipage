@@ -61,3 +61,18 @@ $ asciidoctor -r ./asciidoctor-multipage.rb -b multipage_html5 \
 
 Thank you to an anonymous sponsor for supporting my work on this and other
 projects! ✨
+
+## Contributing
+
+If you interested in contributing to this project, thank you!
+
+- Share this project with someone else who may be interested
+- Contribute a fix for a currently open
+  [issue](https://github.com/owenh000/asciidoctor-multipage/issues) (if any)
+  using a GitHub pull request (please discuss before working on any large
+  changes)
+- Open a new issue for a problem you've discovered or a possible enhancement
+- Sponsor my work through `GitHub Sponsors <https://github.com/owenh000>`_ (see
+  also `owenh.net/support <https://owenh.net/support>`_)
+
+Thank you for your interest!
