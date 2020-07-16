@@ -56,3 +56,8 @@ asciidoctor (1.5.7.1)
 $ asciidoctor -r ./asciidoctor-multipage.rb -b multipage_html5 \
     test/sample.adoc
 ```
+
+## Sponsors
+
+Thank you to an anonymous sponsor for supporting my work on this and other
+projects! ✨
