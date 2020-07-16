@@ -32,13 +32,15 @@ See also:
 
 ## Notes and limitations
 
-- Tested with Asciidoctor v1.5.7.1; inline anchors in unordered list items
-  require the fix for asciidoctor issue #2812.
-- This extension is tightly coupled with Asciidoctor internals, and future
-  changes in Asciidoctor may require updates here. Hopefully this extension
-  exposes ways in which the Asciidoctor API can be improved.
-- Footnotes are currently not supported.
-- Please contribute fixes and enhancements!
+- Only Asciidoctor v1.5.7.1 is supported. See [issue
+  #2](https://github.com/owenh000/asciidoctor-multipage/issues/2).
+- Footnotes are currently not supported. See [issue
+  #3](https://github.com/owenh000/asciidoctor-multipage/issues/3).
+- Inline anchors in unordered list items require the fix for [asciidoctor issue
+  #2812](https://github.com/asciidoctor/asciidoctor/issues/2812).
+- Block-level content in table cells, with the AsciiDoc "a" attribute, is not
+  supported. See [issue
+  #1](https://github.com/owenh000/asciidoctor-multipage/issues/1).
 
 ## Usage
 
@@ -54,12 +56,3 @@ asciidoctor (1.5.7.1)
 $ asciidoctor -r ./asciidoctor-multipage.rb -b multipage_html5 \
     test/sample.adoc
 ```
-
-## Work needed
-
-If you are interested in working on this extension, please consider the
-following:
-
-- Update for use with the latest Asciidoctor release
-- Add support for footnotes
-- Add a test suite
