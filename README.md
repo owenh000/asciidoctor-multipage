@@ -53,7 +53,7 @@ extension's functionality.
 $ gem list asciidoctor$
 asciidoctor (1.5.7.1)
 
-$ asciidoctor -r ./asciidoctor-multipage.rb -b multipage_html5 \
+$ asciidoctor -r ./lib/asciidoctor-multipage.rb -b multipage_html5 \
     test/sample.adoc
 ```
 
