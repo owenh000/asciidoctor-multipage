@@ -98,6 +98,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
 
   register_for 'multipage_html5'
 
+  attr_accessor :pages
+
   def initialize(backend, opts = {})
     @xml_mode = false
     @void_element_slash = nil

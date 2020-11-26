@@ -1,0 +1,144 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="sample.html">MultipageHtml5Converter Sample</a></span></p><ul class="sectlevel0">
+<li><a href="about-sample.html"><span class="toc-current">About This Sample</span></a>
+<ul class="sectlevel1">
+<li><a href="about-sample.html#tree">1. Tree Nodes</a>
+</li>
+<li><a href="about-sample.html#output">2. Output Files</a>
+</li>
+</ul>
+</li>
+<li><a href="custom-level.html">Custom Level Part</a>
+</li>
+</ul>
+</div>
+<h1 id="about-sample" class="sect0">About This Sample</h1>
+<div class="sect1">
+<h2 id="tree">1. Tree Nodes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The MultipageHtml5Converter splits the document into node types during
+processing, based on the value of the <code>multipage-level</code> attribute. If a node&#8217;s
+level is equal to the <code>multipage-level</code> value specified for it or the nearest
+ancestor node, then the node is generated as a leaf node. In this context,
+"node" refers to an Asciidoctor Document or Section.</p>
+</div>
+<div class="paragraph">
+<p>For this document, the following node types are determined. A file is written
+for each root, branch, and leaf node. Each content node is included in its
+parent (leaf) node file.</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="sample.html">MultipageHtml5Converter Sample</a></strong> – <code>multipage-level=0</code>, source document root → root node</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="about-sample.html">About This Sample</a> – level-0 part → leaf node</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="about-sample.html#tree">Tree Nodes</a> – level-1 chapter → content node</p>
+</li>
+<li>
+<p><a href="about-sample.html#output">Output Files</a> – level-1 chapter → content node</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><a href="custom-level.html">Custom Level Part</a> – <code>multipage-level=1</code>, level-0 part → branch node</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="custom-chapter-1.html">One Chapter</a> – level-1 chapter → leaf node</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><a href="custom-chapter-1.html#xrefs1">Cross-References</a> – level-2 section → content node</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><a href="custom-chapter-2.html">Another Chapter</a> – level-1 chapter → leaf node</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><a href="custom-chapter-2.html#xrefs2">More Cross-References</a> – level-2 section → content node</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="output">2. Output Files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The MultipageHtml5Converter creates the following five output files from this
+<code>sample.adoc</code> document.</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="sample.html">MultipageHtml5Converter Sample</a></strong> – root node with id/title <code>[[sample]]</code> (from the file name) →
+the main output file (<a href="sample.html">sample.html</a> by default)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="about-sample.html">About This Sample</a> – leaf node with id <code>[[about-sample]]</code> →
+<a href="about-sample.html">about-sample.html</a></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="about-sample.html#tree">Tree Nodes</a> – content node → included in parent node</p>
+</li>
+<li>
+<p><a href="about-sample.html#output">Output Files</a> – content node → included in parent node</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><a href="custom-level.html">Custom Level Part</a> – branch node with id <code>[[custom-level]]</code> →
+<a href="custom-level.html">custom-level.html</a></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="custom-chapter-1.html">One Chapter</a> – leaf node with id <code>[[custom-chapter-1]]</code> →
+<a href="custom-chapter-1.html">custom-chapter-1.html</a></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><a href="custom-chapter-1.html#xrefs1">Cross-References</a> – content node → included in parent node</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><a href="custom-chapter-2.html">Another Chapter</a> – leaf node with id <code>[[custom-chapter-2]]</code> →
+<a href="custom-chapter-2.html">custom-chapter-2.html</a></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><a href="custom-chapter-2.html#xrefs2">More Cross-References</a> – content node → included in parent node</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="sample.html">MultipageHtml5Converter Sample</a> | Next: <a href="custom-level.html">Custom Level Part</a> →</p>
+</div>

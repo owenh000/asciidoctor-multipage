@@ -46,7 +46,7 @@ See also:
 
 Be sure to use Asciidoctor v1.5.7.1. Other versions are not yet supported.
 
-There is an extensive sample document under `test/` that showcases the
+There is an extensive sample document under `test/fixtures/` that showcases the
 extension's functionality.
 
 ```
@@ -54,7 +54,7 @@ $ gem list asciidoctor$
 asciidoctor (1.5.7.1)
 
 $ asciidoctor -r ./lib/asciidoctor-multipage.rb -b multipage_html5 \
-    test/sample.adoc
+    -D test/out test/fixtures/sample.adoc
 ```
 
 ## Sponsors

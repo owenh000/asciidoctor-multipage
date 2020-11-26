@@ -1,0 +1,41 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root toc-current"><a href="sample.html">MultipageHtml5Converter Sample</a></span></p><ul class="sectlevel0">
+<li><a href="about-sample.html">About This Sample</a>
+</li>
+<li><a href="custom-level.html">Custom Level Part</a>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This sample document attempts to showcase the features of the
+MultipageHtml5Converter extension.
+The output can be generated from the current directory with <code>asciidoctor
+-r ../asciidoctor-multipage.rb -b multipage_html5 sample.adoc</code>.</p>
+</div>
+<div class="paragraph">
+<p>These three paragraphs are in the "preamble" area (the first has the <code>lead</code>
+attribute). This content belongs to the root-level node and is written to the
+main output file (<code>sample.html</code>, by default).</p>
+</div>
+<div class="paragraph">
+<p><a id="root-inline"></a>This paragraph has a titled inline anchor
+with id <code>[[root-inline]]</code>. It is linked from <a href="custom-chapter-2.html#xrefs2">More Cross-References</a>.</p>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="about-sample.html">About This Sample</a> – Explains how this sample document is processed</p>
+</li>
+<li>
+<p><a href="custom-level.html">Custom Level Part</a> – Shows a custom multipage-level value and additional features</p>
+</li>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p>Next: <a href="about-sample.html">About This Sample</a> →</p>
+</div>
