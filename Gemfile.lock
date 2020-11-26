@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    asciidoctor-multipage (0.0.1.dev)
+      asciidoctor (= 1.5.7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -9,7 +15,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  asciidoctor (= 1.5.7.1)
+  asciidoctor-multipage!
+  bundler
   minitest
   rake
 
