@@ -50,8 +50,8 @@ There is an extensive sample document under `test/fixtures/` that showcases the
 extension's functionality.
 
 ```
-$ gem list asciidoctor$
-asciidoctor (1.5.7.1)
+$ asciidoctor -V
+Asciidoctor 1.5.7.1 [https://asciidoctor.org]
 
 $ asciidoctor -r ./lib/asciidoctor-multipage.rb -b multipage_html5 \
     -D test/out test/fixtures/sample.adoc
