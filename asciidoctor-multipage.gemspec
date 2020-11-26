@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'rake'
   s.add_runtime_dependency 'asciidoctor', '1.5.7.1'
+  s.add_runtime_dependency 'thread_safe'
   s.date = '2020-11-26'
   s.required_ruby_version = '>= 2.5'
 end

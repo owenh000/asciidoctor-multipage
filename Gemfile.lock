@@ -3,6 +3,7 @@ PATH
   specs:
     asciidoctor-multipage (0.0.1.dev)
       asciidoctor (= 1.5.7.1)
+      thread_safe
 
 GEM
   remote: https://rubygems.org/
@@ -10,6 +11,7 @@ GEM
     asciidoctor (1.5.7.1)
     minitest (5.14.2)
     rake (13.0.1)
+    thread_safe (0.3.6)
 
 PLATFORMS
   ruby
