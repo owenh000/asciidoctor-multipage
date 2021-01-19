@@ -10,7 +10,7 @@ GEM
   specs:
     asciidoctor (1.5.7.1)
     minitest (5.14.2)
-    rake (13.0.1)
+    rake (13.0.3)
     thread_safe (0.3.6)
 
 PLATFORMS
