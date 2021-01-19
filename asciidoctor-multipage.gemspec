@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 13'
   s.add_runtime_dependency 'asciidoctor', '1.5.7.1'
   s.add_runtime_dependency 'thread_safe', '> 0'
-  s.date = '2020-11-26'
+  s.date = '2021-01-19'
   s.required_ruby_version = '>= 2.5'
 end
