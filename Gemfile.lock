@@ -9,7 +9,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     asciidoctor (1.5.7.1)
-    minitest (5.14.2)
+    minitest (5.14.3)
     rake (13.0.3)
     thread_safe (0.3.6)
 
