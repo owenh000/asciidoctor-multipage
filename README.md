@@ -103,7 +103,7 @@ Thank you for your interest!
 
 ## Copyright and License
 
-Copyright 2019-2020 Owen T. Heisler. MIT license.
+Copyright 2019-2021 Owen T. Heisler. MIT license.
 
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
