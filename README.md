@@ -93,6 +93,14 @@ If you interested in contributing to this project, thank you!
 
 Thank you for your interest!
 
+## Development
+
+- To install dependencies, run `bundler install`.
+- To run tests, run `bundler exec rake test`.
+- To release a new version, update the date in `asciidoctor-multipage.gemspec`,
+  increment the version in `lib/asciidoctor-multipage/version.rb`, and run
+  `bundler exec rake release`.
+
 ## Copyright and License
 
 Copyright 2019-2020 Owen T. Heisler. MIT license.
