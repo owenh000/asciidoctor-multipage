@@ -11,6 +11,8 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
   s.metadata = {
     "bug_tracker_uri" => "https://github.com/owenh000/asciidoctor-multipage/issues",
+    "homepage_uri" => s.homepage,
+    "source_code_uri" => "https://github.com/owenh000/asciidoctor-multipage",
   }
 
   s.add_development_dependency 'bundler', '~> 1'
