@@ -3,7 +3,7 @@ PATH
   specs:
     asciidoctor-multipage (0.0.1.dev)
       asciidoctor (= 1.5.7.1)
-      thread_safe
+      thread_safe (> 0)
 
 GEM
   remote: https://rubygems.org/
@@ -18,9 +18,9 @@ PLATFORMS
 
 DEPENDENCIES
   asciidoctor-multipage!
-  bundler
-  minitest
-  rake
+  bundler (~> 1)
+  minitest (~> 5)
+  rake (~> 13)
 
 BUNDLED WITH
    1.17.3

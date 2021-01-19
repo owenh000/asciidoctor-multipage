@@ -13,11 +13,11 @@ Gem::Specification.new do |s|
     "bug_tracker_uri" => "https://github.com/owenh000/asciidoctor-multipage/issues",
   }
 
-  s.add_development_dependency 'bundler'
-  s.add_development_dependency 'minitest'
-  s.add_development_dependency 'rake'
+  s.add_development_dependency 'bundler', '~> 1'
+  s.add_development_dependency 'minitest', '~> 5'
+  s.add_development_dependency 'rake', '~> 13'
   s.add_runtime_dependency 'asciidoctor', '1.5.7.1'
-  s.add_runtime_dependency 'thread_safe'
+  s.add_runtime_dependency 'thread_safe', '> 0'
   s.date = '2020-11-26'
   s.required_ruby_version = '>= 2.5'
 end
