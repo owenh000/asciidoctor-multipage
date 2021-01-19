@@ -1,9 +1,13 @@
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "asciidoctor-multipage/version"
+
 Gem::Specification.new do |s|
   s.authors = ['Owen T. Heisler']
   s.files = ['lib/asciidoctor-multipage.rb']
   s.name = 'asciidoctor-multipage'
   s.summary = 'Asciidoctor multipage HTML output extension'
-  s.version = '0.0.1.dev'
+  s.version = AsciidoctorMultipage::VERSION
 
   s.description = 'An Asciidoctor extension that generates HTML output using multiple pages'
   s.email = ['writer@owenh.net']
