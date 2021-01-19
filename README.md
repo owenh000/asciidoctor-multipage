@@ -42,20 +42,36 @@ See also:
   supported. See [issue
   #1](https://github.com/owenh000/asciidoctor-multipage/issues/1).
 
+## Installation
+
+Install the gem by adding it to your project's Gemfile or gemspec and running Bundler, or install it directly:
+
+```
+$ gem install asciidoctor-multipage
+```
+
+(Run `gem install --user-install asciidoctor-multipage` to install the gem in
+your user's home directory.)
+
 ## Usage
 
 Be sure to use Asciidoctor v1.5.7.1. Other versions are not yet supported.
 
-There is an extensive sample document under `test/fixtures/` that showcases the
-extension's functionality.
-
 ```
 $ asciidoctor -V
 Asciidoctor 1.5.7.1 [https://asciidoctor.org]
+```
 
-$ asciidoctor -r ./lib/asciidoctor-multipage.rb -b multipage_html5 \
+Use Asciidoctor's `-r` option to require `asciidoctor-multipage` and the `-b`
+option to select the `multipage_html5` backend.
+
+```
+$ asciidoctor -r asciidoctor-multipage -b multipage_html5 \
     -D test/out test/fixtures/sample.adoc
 ```
+
+There is a sample document under `test/fixtures/` that showcases the
+extension's functionality; the above command generates
 
 ## Sponsors
 
