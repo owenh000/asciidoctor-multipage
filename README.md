@@ -97,9 +97,12 @@ Thank you for your interest!
 
 - To install dependencies, run `bundler install`.
 - To run tests, run `bundler exec rake test`.
-- To release a new version, update the date in `asciidoctor-multipage.gemspec`,
-  increment the version in `lib/asciidoctor-multipage/version.rb`, and run
-  `bundler exec rake release`.
+- To release a new version:
+  1. update the date in `asciidoctor-multipage.gemspec`, remove `.dev` from the
+     version in `lib/asciidoctor-multipage/version.rb`, and commit the changes;
+  2. run `bundler exec rake release`; and
+  3. increment the version in `lib/asciidoctor-multipage/version.rb` (adding
+     `.dev`) and commit the changes.
 
 ## Copyright and License
 
