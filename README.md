@@ -102,7 +102,7 @@ Thank you for your interest!
      version in `lib/asciidoctor-multipage/version.rb`, and commit the changes;
   2. run `bundler exec rake release`; and
   3. increment the version in `lib/asciidoctor-multipage/version.rb` (adding
-     `.dev`) and commit the changes.
+     `.dev`), run `bundler lock`, and commit the changes.
 
 ## Copyright and License
 
