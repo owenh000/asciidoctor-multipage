@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     asciidoctor-multipage (0.0.3.dev)
-      asciidoctor (= 2.0.12)
+      asciidoctor (>= 2.0.11, < 2.1)
 
 GEM
   remote: https://rubygems.org/

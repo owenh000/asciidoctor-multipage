@@ -51,7 +51,7 @@ your user's home directory.)
 
 ## Usage
 
-Be sure to use Asciidoctor v2.0.12. Currently, no other versions are supported.
+Be sure to use Asciidoctor v2.0.11 or later.
 
 ```
 $ asciidoctor -V
