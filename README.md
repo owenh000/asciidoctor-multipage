@@ -72,25 +72,21 @@ extension's functionality. The above command generates the HTML output and
 writes it to `test/out/`. View the output by loading `test/out/sample.html` in
 a browser.
 
-## Sponsors
+## Sponsors and contributing
 
-Thank you to an anonymous sponsor for supporting my work on this and other
-projects! ✨
+To my current sponsor, thank you for your support! ✨
 
-## Contributing
+To anyone else interested in contributing, please consider:
 
-If you interested in contributing to this project, thank you!
-
-- Share this project with someone else who may be interested
-- Contribute a fix for a currently open
+- sharing this project with someone else who may be interested;
+- contributing a fix for a currently open
   [issue](https://github.com/owenh000/asciidoctor-multipage/issues) (if any)
   using a GitHub pull request (please discuss before working on any large
-  changes)
-- Open a new issue for a problem you've discovered or a possible enhancement
-- Sponsor my work through [GitHub Sponsors](https://github.com/owenh000) (see
-  also [owenh.net/support](https://owenh.net/support))
-
-Thank you for your interest!
+  changes);
+- opening a new issue for a problem you've discovered or a possible
+  enhancement; and/or
+- sponsoring my work through [GitHub Sponsors](https://github.com/owenh000)
+  (and see also [owenh.net/support](https://owenh.net/support)).
 
 ## Development
 
