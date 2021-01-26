@@ -34,8 +34,6 @@ See also:
 
 - Footnotes are currently not supported. See [issue
   #3](https://github.com/owenh000/asciidoctor-multipage/issues/3).
-- Inline anchors in unordered list items require the fix for [asciidoctor issue
-  #2812](https://github.com/asciidoctor/asciidoctor/issues/2812).
 - Block-level content in table cells, with the AsciiDoc "a" attribute, is not
   supported. See [issue
   #1](https://github.com/owenh000/asciidoctor-multipage/issues/1).
