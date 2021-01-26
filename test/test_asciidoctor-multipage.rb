@@ -9,7 +9,8 @@ class AsciidoctorMultipageTest < Minitest::Test
                                    :to_file => true,
                                    :header_footer => false,
                                    :backend => 'multipage_html5')
-    doc.converter.pages.each do |page|
+    pages = [doc] + doc.converter.pages
+    pages.each do |page|
       page_path_before = 'test/fixtures/' + page.id + '.html'
       page_path_after = 'test/out/' + page.id + '.html'
       File.open(page_path_before) do |fb|
