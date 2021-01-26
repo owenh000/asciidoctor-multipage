@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    asciidoctor-multipage (0.0.2.dev)
+    asciidoctor-multipage (0.0.2)
       asciidoctor (= 2.0.12)
 
 GEM
