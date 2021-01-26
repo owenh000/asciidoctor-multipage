@@ -77,16 +77,16 @@ class Asciidoctor::Section
   def sectnum(delimiter = '.', append = nil)
     append ||= (append == false ? '' : delimiter)
     if @level == 1
-      %(#{@number}#{append})
+      %(#{@numeral}#{append})
     elsif @level > 1
       if @parent.class == Asciidoctor::Section ||
          (@mplevel && @parent.class == Asciidoctor::Document)
-        %(#{@parent.sectnum(delimiter)}#{@number}#{append})
+        %(#{@parent.sectnum(delimiter)}#{@numeral}#{append})
       else
-        %(#{@number}#{append})
+        %(#{@numeral}#{append})
       end
     else # @level == 0
-      %(#{Asciidoctor::Helpers.int_to_roman @number}#{append})
+      %(#{Asciidoctor::Helpers.int_to_roman @numeral}#{append})
     end
   end
 end
@@ -117,13 +117,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     page << block
   end
 
-  def convert(node, transform = nil, opts = {})
-    transform ||= node.node_name
-    opts.empty? ? (send transform, node) : (send transform, node, opts)
-  end
-
   # Process Document (either the original full document or a processed page)
-  def document(node)
+  def convert_document(node)
     if node.processed
       # This node can now be handled by Html5Converter.
       super
@@ -198,7 +193,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
 
   # Process Document in embeddable mode (either the original full document or a
   # processed page)
-  def embedded(node)
+  def convert_embedded(node)
     if node.processed
       # This node can now be handled by Html5Converter.
       super
@@ -298,7 +293,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
 
   # Include chapter pages in cross-reference links. This method overrides for
   # the :xref node type only.
-  def inline_anchor(node)
+  def convert_inline_anchor(node)
     if node.type == :xref
       # This is the same as super...
       if (path = node.attributes['path'])
@@ -369,7 +364,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       new_section.title = node.title
       new_section.mplevel = node.mplevel
       new_parent << new_section
-      new_parent.sections.last.number = node.number
+      new_parent.sections.last.numeral = node.numeral
       new_parent = new_section
       node.sections.each do |section|
         new_outline_doc(section, new_parent: new_parent,
@@ -380,7 +375,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   end
 
   # Override Html5Converter outline() to return a custom TOC outline
-  def outline(node, opts = {})
+  def convert_outline(node, opts = {})
     doc = node.document
     # Find this node in the @@full_outline skeleton document
     page_node = @@full_outline.find_by(id: node.id).first
@@ -424,7 +419,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
 
   # Process a Section. Each Section will either be split off into its own page
   # or processed as normal by Html5Converter.
-  def section(node)
+  def convert_section(node)
     doc = node.document
     if doc.processed
       # This node can now be handled by Html5Converter.

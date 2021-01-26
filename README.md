@@ -32,8 +32,6 @@ See also:
 
 ## Notes and limitations
 
-- Only Asciidoctor v1.5.7.1 is supported. See [issue
-  #2](https://github.com/owenh000/asciidoctor-multipage/issues/2).
 - Footnotes are currently not supported. See [issue
   #3](https://github.com/owenh000/asciidoctor-multipage/issues/3).
 - Inline anchors in unordered list items require the fix for [asciidoctor issue
@@ -55,11 +53,11 @@ your user's home directory.)
 
 ## Usage
 
-Be sure to use Asciidoctor v1.5.7.1. Other versions are not yet supported.
+Be sure to use Asciidoctor v2.0.12. Currently, no other versions are supported.
 
 ```
 $ asciidoctor -V
-Asciidoctor 1.5.7.1 [https://asciidoctor.org]
+Asciidoctor 2.0.12 [https://asciidoctor.org]
 ```
 
 Use Asciidoctor's `-r` option to require `asciidoctor-multipage` and the `-b`
