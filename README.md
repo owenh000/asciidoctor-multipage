@@ -5,6 +5,7 @@ generate multiple HTML pages from the document tree.
 
 See also:
 
+- <https://rubygems.org/gems/asciidoctor-multipage>
 - <https://github.com/asciidoctor/asciidoctor/issues/626>
 - <https://github.com/asciidoctor/asciidoctor-extensions-lab/pull/96>
 
