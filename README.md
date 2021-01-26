@@ -7,7 +7,6 @@ See also:
 
 - <https://github.com/asciidoctor/asciidoctor/issues/626>
 - <https://github.com/asciidoctor/asciidoctor-extensions-lab/pull/96>
-- <https://github.com/asciidoctor/asciidoctor-extensions-lab/blob/master/lib/multipage-html5-converter.rb>
 
 ## Features
 
