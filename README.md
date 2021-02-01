@@ -90,7 +90,10 @@ To anyone else interested in contributing, please consider:
 ## Development
 
 - To install dependencies, run `bundler install`.
-- To run tests, run `bundler exec rake test`.
+- To run tests, run `bundler exec rake`.
+- To run tests against multiple versions of Asciidoctor:
+  1. run `bundler exec appraisal install` to install dependencies and
+  2. run `bundler exec appraisal rake` to run the tests.
 - To release a new version:
   1. update the date in `asciidoctor-multipage.gemspec`, remove `.dev` from the
      version in `lib/asciidoctor-multipage/version.rb`, run `bundler lock`, and
@@ -98,6 +101,11 @@ To anyone else interested in contributing, please consider:
   2. run `bundler exec rake release`; and
   3. increment the version in `lib/asciidoctor-multipage/version.rb` (adding
      `.dev`), run `bundler lock`, and commit the changes.
+- To change versions of Asciidoctor to test against:
+  1. update `Appraisals` as required,
+  2. run `bundler exec appraisal generate --travis`,
+  3. update `.travis.yml` using the output from the previous command, and
+  4. commit the changes.
 
 ## Copyright and License
 

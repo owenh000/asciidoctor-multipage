@@ -7,14 +7,20 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    appraisal (2.3.0)
+      bundler
+      rake
+      thor (>= 0.14.0)
     asciidoctor (2.0.12)
     minitest (5.14.3)
     rake (13.0.3)
+    thor (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  appraisal
   asciidoctor-multipage!
   bundler (~> 1)
   minitest (~> 5)

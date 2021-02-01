@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     "source_code_uri" => "https://github.com/owenh000/asciidoctor-multipage",
   }
 
+  s.add_development_dependency 'appraisal'
   s.add_development_dependency 'bundler', '~> 1'
   s.add_development_dependency 'minitest', '~> 5'
   s.add_development_dependency 'rake', '~> 13'
