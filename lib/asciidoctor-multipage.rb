@@ -500,9 +500,9 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
         section.set_attr('multipage-level', node.attr('multipage-level'))
       end
       # Set section type
-      if section.level < section.attr('multipage-level').to_i
+      if section.level < section.attr('multipage-level', nil, true).to_i
         section.mplevel = :branch
-      elsif section.level == section.attr('multipage-level').to_i
+      elsif section.level == section.attr('multipage-level', nil, true).to_i
         section.mplevel = :leaf
       else
         section.mplevel = :content
