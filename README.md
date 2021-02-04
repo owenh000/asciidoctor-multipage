@@ -63,13 +63,13 @@ option to select the `multipage_html5` backend.
 
 ```
 $ asciidoctor -r asciidoctor-multipage -b multipage_html5 \
-    -D test/out test/fixtures/sample.adoc
+    -D test/out test/black-box-docs/sample/sample.adoc
 ```
 
-There is a sample document under `test/fixtures/` that showcases the
-extension's functionality. The above command generates the HTML output and
-writes it to `test/out/`. View the output by loading `test/out/sample.html` in
-a browser.
+There is a sample document at `test/black-box-docs/sample/sample.adoc` that
+showcases the extension's functionality. The above command generates the HTML
+output and writes it to `test/out/`. View the output by loading
+`test/out/sample.html` in a browser.
 
 ## Sponsors and contributing
 
