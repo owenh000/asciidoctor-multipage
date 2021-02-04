@@ -486,7 +486,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     doc = node.document
     node.mplevel = :root if node.class == Asciidoctor::Document
     node.sections.each do |section|
-      # Check custom multipage-level attribute on section
+      # Check custom multipage-level attribute on section; warn and
+      # discard if invalid
       if section.attr?('multipage-level', nil, false) &&
          section.attr('multipage-level').to_i <
          node.attr('multipage-level').to_i
