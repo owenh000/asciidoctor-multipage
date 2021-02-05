@@ -1,8 +1,8 @@
-= Basic Test
+= Basic Multipart Test
 :doctype: book
 :toc: left
 
-This tests a basic book with two parts and pages split at the default level.
+This tests a basic multipart book with pages split at the default level.
 
 = Part 1
 
