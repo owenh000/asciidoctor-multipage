@@ -84,6 +84,9 @@ The following attributes can be used to adjust the extension's behavior:
 - The `desc` attribute can be used for any section to provide a description
   when the section is listed on its parent landing page.
 
+For an example of the above attributes in use, see
+`test/black-box-docs/sample/sample.adoc`.
+
 ## Sponsors and contributing
 
 To my current sponsor, thank you for your support! ✨
