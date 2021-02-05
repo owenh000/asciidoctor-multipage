@@ -59,17 +59,14 @@ Asciidoctor 2.0.12 [https://asciidoctor.org]
 ```
 
 Use Asciidoctor's `-r` option to require `asciidoctor-multipage` and the `-b`
-option to select the `multipage_html5` backend.
+option to select the `multipage_html5` backend. The following command generates
+HTML output from a sample document; view the output by loading
+`test/out/sample.html` in a browser.
 
 ```
 $ asciidoctor -r asciidoctor-multipage -b multipage_html5 \
     -D test/out test/black-box-docs/sample/sample.adoc
 ```
-
-There is a sample document at `test/black-box-docs/sample/sample.adoc` that
-showcases the extension's functionality. The above command generates the HTML
-output and writes it to `test/out/`. View the output by loading
-`test/out/sample.html` in a browser.
 
 ## Adjusting behavior
 
