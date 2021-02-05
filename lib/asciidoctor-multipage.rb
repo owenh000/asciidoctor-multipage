@@ -202,8 +202,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       super
     else
       # This node is the original full document which has not yet been
-      # processed; it can be handled by document().
-      document(node)
+      # processed; it can be handled by convert_document().
+      convert_document(node)
     end
   end
 
