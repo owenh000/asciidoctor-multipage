@@ -71,6 +71,22 @@ showcases the extension's functionality. The above command generates the HTML
 output and writes it to `test/out/`. View the output by loading
 `test/out/sample.html` in a browser.
 
+## Adjusting behavior
+
+The following attributes can be used to adjust the extension's behavior:
+
+- The `multipage-level` *document attribute* specifies the section level at
+  which the book is split into separate pages. The value should be an integer
+  and matches the Asciidoctor levels:
+  - `0` splits into parts,
+  - `1` splits into chapters (the default),
+  - `2` splits into sections, etc.
+- The `multipage-level` *section attribute* specifies the section level to use
+  for splitting the children of that section only. The integer given must be
+  equal to or greater than the values of all parent levels.
+- The `desc` attribute can be used for any section to provide a description
+  when the section is listed on its parent landing page.
+
 ## Sponsors and contributing
 
 To my current sponsor, thank you for your support! ✨
