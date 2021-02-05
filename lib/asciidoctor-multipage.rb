@@ -120,7 +120,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   # Process Document (either the original full document or a processed page)
   def convert_document(node)
     if node.processed
-      # This node can now be handled by Html5Converter.
+      # This node (an individual page) can now be handled by
+      # Html5Converter.
       super
     else
       # This node is the original full document which has not yet been
@@ -146,6 +147,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       # Set multipage chunk types
       set_multipage_attrs(node)
 
+      # FIXME: This can result in a duplicate ID without a warning.
       # Set the "id" attribute for the Document, using the "docname", which is
       # based on the file name. Then register the document ID using the
       # document title. This allows cross-references to refer to (1) the
@@ -195,7 +197,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   # processed page)
   def convert_embedded(node)
     if node.processed
-      # This node can now be handled by Html5Converter.
+      # This node (an individual page) can now be handled by
+      # Html5Converter.
       super
     else
       # This node is the original full document which has not yet been
@@ -216,7 +219,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
         previous_page = pages[page_index-1]
         parent_page = page.parent
         home_page = doc
-        # NOTE, there are some non-breaking spaces (U+00A0) below.
+        # NOTE: There are some non-breaking spaces (U+00A0) below, in
+        # the "links <<" lines and "links.join" line.
         if previous_page != parent_page
           links << %(← Previous: <<#{previous_page.id}>>)
         end
@@ -237,9 +241,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   end
 
   # Generate the actual HTML outline for the TOC. This method is analogous to
-  # Html5Converter outline().
+  # Html5Converter convert_outline().
   def generate_outline(node, opts = {})
-    # This is the same as Html5Converter outline()
     return unless node.sections?
     sectnumlevels = opts[:sectnumlevels] || (node.document.attr 'sectnumlevels', 3).to_i
     toclevels = opts[:toclevels] || (node.document.attr 'toclevels', 2).to_i
@@ -277,7 +280,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       end
       result << %(<li><a href="#{link}">#{stitle}</a>)
 
-      # Finish in a manner similar to Html5Converter outline()
+      # Finish in a manner similar to Html5Converter convert_outline()
       if slevel < toclevels &&
          (child_toc_level = generate_outline section,
                                         :toclevels => toclevels,
@@ -374,7 +377,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     return new_document
   end
 
-  # Override Html5Converter outline() to return a custom TOC outline
+  # Override Html5Converter convert_outline() to return a custom TOC
+  # outline.
   def convert_outline(node, opts = {})
     doc = node.document
     # Find this node in the @@full_outline skeleton document
@@ -495,7 +499,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
                     %(section cannot be less than the parent section value)
         section.set_attr('multipage-level', nil)
       end
-      # Propogate custom multipage-level value to child node
+      # Propagate custom multipage-level value to child node
       if !section.attr?('multipage-level', nil, false) &&
          node.attr('multipage-level') != doc.attr('multipage-level')
         section.set_attr('multipage-level', node.attr('multipage-level'))
