@@ -244,8 +244,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   # Html5Converter convert_outline().
   def generate_outline(node, opts = {})
     return unless node.sections?
-    sectnumlevels = opts[:sectnumlevels] || (node.document.attr 'sectnumlevels', 3).to_i
-    toclevels = opts[:toclevels] || (node.document.attr 'toclevels', 2).to_i
+    sectnumlevels = opts[:sectnumlevels] || (node.document.attributes['sectnumlevels'] || 3).to_i
+    toclevels = opts[:toclevels] || (node.document.attributes['toclevels'] || 2).to_i
     sections = node.sections
     result = [%(<ul class="sectlevel#{sections[0].level}">)]
     sections.each do |section|
@@ -283,9 +283,9 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       # Finish in a manner similar to Html5Converter convert_outline()
       if slevel < toclevels &&
          (child_toc_level = generate_outline section,
-                                        :toclevels => toclevels,
-                                        :secnumlevels => sectnumlevels,
-                                        :page_id => opts[:page_id])
+                                             toclevels: toclevels,
+                                             secnumlevels: sectnumlevels,
+                                             page_id: opts[:page_id])
         result << child_toc_level
       end
       result << '</li>'
