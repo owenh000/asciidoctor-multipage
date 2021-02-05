@@ -1,0 +1,39 @@
+= Basic Test
+:doctype: book
+:toc: left
+
+This tests a basic non-multipart book with pages split at the default level.
+
+== Chapter 1
+
+Chapter 1 text
+
+=== Section 1-1
+
+Section 1-1 text
+
+=== Section 1-2
+
+Section 1-2 text
+
+== Chapter 2
+
+=== Section 2-1
+
+Section 2-1 text
+
+=== Section 2-2
+
+Section 2-2 text
+
+////
+[[basic]]
+== Basic
+
+test
+
+[[extra]]
+== Extra
+
+test
+////
