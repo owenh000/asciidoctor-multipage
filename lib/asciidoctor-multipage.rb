@@ -17,6 +17,7 @@ class Asciidoctor::AbstractNode
       node_tree << current
       current = current.parent
     end
+    node_tree << current
     if node_tree.include?(self) ||
        node_tree.include?(self.parent)
       return true
