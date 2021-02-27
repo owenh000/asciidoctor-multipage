@@ -110,6 +110,8 @@ To anyone else interested in contributing, please consider:
 - To run tests against multiple versions of Asciidoctor:
   1. run `bundler exec appraisal install` to install dependencies and
   2. run `bundler exec appraisal rake` to run the tests.
+- To build the current version, run `bundler exec rake build`; the gem will be
+  placed in the `pkg/` directory.
 - To release a new version:
   1. update the date in `asciidoctor-multipage.gemspec`, remove `.dev` from the
      version in `lib/asciidoctor-multipage/version.rb`, run `bundler lock`, and
