@@ -4,7 +4,7 @@ require "asciidoctor-multipage/version"
 
 Gem::Specification.new do |s|
   s.authors = ['Owen T. Heisler']
-  s.files = ['lib/asciidoctor-multipage.rb']
+  s.files = Dir['lib/*.rb']
   s.name = 'asciidoctor-multipage'
   s.summary = 'Asciidoctor multipage HTML output extension'
   s.version = AsciidoctorMultipage::VERSION
