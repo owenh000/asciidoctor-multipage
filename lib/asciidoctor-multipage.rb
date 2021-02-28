@@ -376,7 +376,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
                                 numbered = node.numbered)
       new_section.id = node.id
       new_section.caption = node.caption
-      new_section.title = node.title
+      new_section.title = node.instance_variable_get(:@title)
       new_section.mplevel = node.mplevel
       new_parent << new_section
       new_parent.sections.last.numeral = node.numeral
