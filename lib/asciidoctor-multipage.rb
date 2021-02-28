@@ -244,6 +244,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   # Generate the actual HTML outline for the TOC. This method is analogous to
   # Html5Converter convert_outline().
   def generate_outline(node, opts = {})
+    # Do the same as Html5Converter convert_outline() here
     return unless node.sections?
     sectnumlevels = opts[:sectnumlevels] || (node.document.attributes['sectnumlevels'] || 3).to_i
     toclevels = opts[:toclevels] || (node.document.attributes['toclevels'] || 2).to_i
@@ -254,7 +255,17 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       if section.caption
         stitle = section.captioned_title
       elsif section.numbered && slevel <= sectnumlevels
-        stitle = %(#{section.sectnum} #{section.title})
+        if slevel < 2 && node.document.doctype == 'book'
+          if section.sectname == 'chapter'
+            stitle =  %(#{(signifier = node.document.attributes['chapter-signifier']) ? "#{signifier} " : ''}#{section.sectnum} #{section.title})
+          elsif section.sectname == 'part'
+            stitle =  %(#{(signifier = node.document.attributes['part-signifier']) ? "#{signifier} " : ''}#{section.sectnum nil, ':'} #{section.title})
+          else
+            stitle = %(#{section.sectnum} #{section.title})
+          end
+        else
+          stitle = %(#{section.sectnum} #{section.title})
+        end
       else
         stitle = section.title
       end
