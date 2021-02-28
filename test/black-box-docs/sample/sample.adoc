@@ -99,9 +99,12 @@ content node (and is included in its parent node).
 * See <<sample>> (the document id/title and root node).
 
 [[custom-chapter-2]]
-== Another Chapter
+== [.role]##Another Chapter##
 
 This chapter is a leaf node and contains one section.
+
+This chapter also uses a role attribute, which should appear in the Table of
+Contents HTML as `<span class="role">`.
 
 [[xrefs2]]
 === More Cross-References

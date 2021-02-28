@@ -7,7 +7,7 @@
 <ul class="sectlevel1">
 <li><a href="custom-chapter-1.html">3. One Chapter</a>
 </li>
-<li><a href="custom-chapter-2.html"><span class="toc-current">4. Another Chapter</span></a>
+<li><a href="custom-chapter-2.html"><span class="toc-current">4. <span class="role">Another Chapter</span></span></a>
 <ul class="sectlevel2">
 <li><a href="custom-chapter-2.html#xrefs2">4.1. More Cross-References</a>
 </li>
@@ -18,10 +18,14 @@
 </ul>
 </div>
 <div class="sect1">
-<h2 id="custom-chapter-2">4. Another Chapter</h2>
+<h2 id="custom-chapter-2">4. <span class="role">Another Chapter</span></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This chapter is a leaf node and contains one section.</p>
+</div>
+<div class="paragraph">
+<p>This chapter also uses a role attribute, which should appear in the Table of
+Contents HTML as <code>&lt;span class="role"&gt;</code>.</p>
 </div>
 <div class="sect2">
 <h3 id="xrefs2">4.1. More Cross-References</h3>
