@@ -360,8 +360,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       new_document = Document.new([])
       new_document.mplevel = node.mplevel
       new_document.id = node.id
-      new_document.set_attr('sectnumlevels', node.attr(:sectnumlevels))
-      new_document.set_attr('toclevels', node.attr(:toclevels))
+      new_document.update_attributes(node.attributes)
       new_parent = new_document
       node.sections.each do |section|
         new_outline_doc(section, new_parent: new_parent,
