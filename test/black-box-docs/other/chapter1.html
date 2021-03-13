@@ -3,7 +3,9 @@
 <p><span class="toc-root"><a href="other.html">Other Tests</a></span></p><ul class="sectlevel1">
 <li><a href="chapter1.html"><span class="toc-current">1. First Chapter</span></a>
 <ul class="sectlevel2">
-<li><a href="chapter1.html#_custom_attribute">1.1. Custom Attribute</a>
+<li><a href="chapter1.html#myattr">1.1. Custom Attribute</a>
+</li>
+<li><a href="chapter1.html#role">1.2. <span class="role">With Role</span></a>
 </li>
 </ul>
 </li>
@@ -13,10 +15,17 @@
 <h2 id="chapter1">1. First Chapter</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_custom_attribute">1.1. Custom Attribute</h3>
+<h3 id="myattr">1.1. Custom Attribute</h3>
 <div class="paragraph">
 <p>This section has a custom attribute in its title which should be substituted
 in the Table of Contents as well as in the document body.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="role">1.2. <span class="role">With Role</span></h3>
+<div class="paragraph">
+<p>This chapter uses a role attribute, which should appear in the Table of
+Contents HTML as <code>&lt;span class="role"&gt;</code>.</p>
 </div>
 </div>
 </div>

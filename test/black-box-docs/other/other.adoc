@@ -8,7 +8,14 @@ Author Name
 [[chapter1]]
 == First Chapter
 
+[[myattr]]
 === Custom {myattr}
 
 This section has a custom attribute in its title which should be substituted
 in the Table of Contents as well as in the document body.
+
+[[role]]
+=== [.role]##With Role##
+
+This chapter uses a role attribute, which should appear in the Table of
+Contents HTML as `<span class="role">`.
