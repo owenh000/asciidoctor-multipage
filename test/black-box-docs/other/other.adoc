@@ -1,0 +1,14 @@
+= Other Tests
+Author Name
+:doctype: book
+:toc: left
+:sectnums:
+:myattr: Attribute
+
+[[chapter1]]
+== First Chapter
+
+=== Custom {myattr}
+
+This section has a custom attribute in its title which should be substituted
+in the Table of Contents as well as in the document body.
