@@ -8,6 +8,7 @@
 /spec/reports/
 /spec/examples.txt
 /tmp/
+/gemfiles/.bundle/
 
 # Used by dotenv library to load environment variables.
 # .env
