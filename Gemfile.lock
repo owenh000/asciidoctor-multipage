@@ -22,9 +22,9 @@ PLATFORMS
 DEPENDENCIES
   appraisal
   asciidoctor-multipage!
-  bundler (~> 1)
+  bundler (>= 2.2.10)
   minitest (~> 5)
   rake (~> 13)
 
 BUNDLED WITH
-   1.17.3
+   2.2.18

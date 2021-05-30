@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   }
 
   s.add_development_dependency 'appraisal'
-  s.add_development_dependency 'bundler', '~> 1'
+  s.add_development_dependency 'bundler', '>= 2.2.10'
   s.add_development_dependency 'minitest', '~> 5'
   s.add_development_dependency 'rake', '~> 13'
   s.add_runtime_dependency 'asciidoctor', '>= 2.0.11', '< 2.1'
