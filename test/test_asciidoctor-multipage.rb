@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'asciidoctor'
+require 'yaml'
 require 'asciidoctor-multipage'
 
 class AsciidoctorMultipageTest < Minitest::Test
@@ -8,12 +9,19 @@ class AsciidoctorMultipageTest < Minitest::Test
     Dir.foreach(dir) do |filename|
       next if filename == '.' or filename == '..'
       doc_path = File.join(dir, filename)
-      next if !File.directory?(doc_path)
+      next unless File.directory?(doc_path)
       adoc_path = File.join(doc_path, filename + '.adoc')
+      attr_path = File.join(doc_path, filename + '.attr.yaml')
+      if File.exist?(attr_path)
+        attr = YAML.load_file(attr_path)
+      else
+        attr = {}
+      end
       doc = Asciidoctor.convert_file(adoc_path,
                                      :to_dir => 'test/out',
                                      :to_file => true,
                                      :header_footer => false,
+                                     :attributes => attr,
                                      :backend => 'multipage_html5')
       pages = [doc] + doc.converter.pages
       pages.each do |page|
