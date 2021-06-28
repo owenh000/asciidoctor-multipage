@@ -32,11 +32,8 @@ See also:
 
 ## Notes and limitations
 
-- Footnotes are currently not supported. See [issue
-  #3](https://github.com/owenh000/asciidoctor-multipage/issues/3).
-- Block-level content in table cells, with the AsciiDoc "a" attribute, is not
-  supported. See [issue
-  #1](https://github.com/owenh000/asciidoctor-multipage/issues/1).
+Footnotes are currently not supported. See [issue
+#3](https://github.com/owenh000/asciidoctor-multipage/issues/3).
 
 ## Installation
 
