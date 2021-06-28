@@ -1,6 +1,6 @@
 = TOP
-
 :toc:
+:multipage-level: 2
 
 == SECOND
 
