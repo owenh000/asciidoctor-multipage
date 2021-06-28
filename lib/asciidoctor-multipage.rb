@@ -245,7 +245,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   # Html5Converter convert_outline().
   def generate_outline(node, opts = {})
     # Do the same as Html5Converter convert_outline() here
-    return unless node.sections?
+    return unless node.sections? && node.sections.length > 0
     sectnumlevels = opts[:sectnumlevels] || (node.document.attributes['sectnumlevels'] || 3).to_i
     toclevels = opts[:toclevels] || (node.document.attributes['toclevels'] || 2).to_i
     sections = node.sections

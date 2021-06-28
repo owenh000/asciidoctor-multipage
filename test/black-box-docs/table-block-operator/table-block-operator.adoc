@@ -1,0 +1,49 @@
+= TOP
+:toc:
+:multipage-level: 2
+
+== SECOND
+
+=== OOPS
+
+==== DANGER
+
+This tests the use of the AsciiDoc "a" block-level styling for a single cell.
+
+[cols=","]
+|===
+|abc.$\{ext} a|
+* item
+
+|===
+
+The following table from the
+link:https://docs.asciidoctor.org/asciidoc/latest/tables/format-column-content/#use-asciidoc-block-elements-in-a-column[AsciiDoc
+Language Documentation] uses the "a" operator for the entire first column.
+
+[cols="2a,2"]
+|===
+|Column with the `a` style operator applied to its specifier |Column using the default style
+
+|
+* List item 1
+* List item 2
+* List item 3
+|
+* List item 1
+* List item 2
+* List item 3
+
+|
+[source,python]
+----
+import os
+print "%s" %(os.uname())
+----
+|
+[source,python]
+----
+import os
+print ("%s" %(os.uname()))
+----
+|===

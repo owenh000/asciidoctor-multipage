@@ -8,7 +8,7 @@ class AsciidoctorMultipageTest < Minitest::Test
     Dir.foreach(dir) do |filename|
       next if filename == '.' or filename == '..'
       doc_path = File.join(dir, filename)
-      next if !File.directory?(doc_path)
+      next unless File.directory?(doc_path)
       adoc_path = File.join(doc_path, filename + '.adoc')
       doc = Asciidoctor.convert_file(adoc_path,
                                      :to_dir => 'test/out',
