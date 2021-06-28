@@ -19,9 +19,16 @@ class AsciidoctorMultipageTest < Minitest::Test
       pages.each do |page|
         page_path_before = File.join(doc_path, page.id + '.html')
         page_path_after = 'test/out/' + page.id + '.html'
-        File.open(page_path_before) do |fb|
-          File.open(page_path_after) do |fa|
-            assert_equal fb.read(), fa.read()
+        File.open(page_path_after) do |fa|
+          if false
+            # Update output files--currently used only manually
+            File.open(page_path_before, 'w') do |fb|
+              fb.write(fa.read())
+            end
+          else
+            File.open(page_path_before) do |fb|
+              assert_equal fb.read(), fa.read()
+            end
           end
         end
       end
