@@ -1,3 +1,3 @@
 module AsciidoctorMultipage
-  VERSION = "0.0.11.dev"
+  VERSION = "0.0.11"
 end
