@@ -52,6 +52,14 @@ class Asciidoctor::Document
   # nodes are no longer accessible.
   attr_writer :sectnum
 
+  # A pointer to the original converter (first converter instantiated to
+  # convert the original document). As we create additional documents
+  # ourselves, AsciiDoctor will instantiate additional instances of
+  # MultipageHtml5Converter for each created document. These instances need
+  # to share state, so they can use the original converter instance
+  # for that purpose.
+  attr_accessor :mp_root
+
   # Override the AbstractBlock sections?() check to enable the Table Of
   # Contents. This extension may generate short pages that would normally have
   # no need for a TOC. However, we override the Html5Converter outline() in
@@ -101,6 +109,12 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
 
   attr_accessor :pages
 
+  # contains the entire outline of the top-level document, used
+  # as a guide-rail for creating TOC elements for documents we
+  # split off. Only expected to be set in the top-level converter
+  # (see AsciiDoctor::Document::mp_root)
+  attr_accessor :full_outline
+
   def initialize(backend, opts = {})
     @xml_mode = false
     @void_element_slash = nil
@@ -118,8 +132,29 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     page << block
   end
 
+  # ensures that the AsciiDoctor::Document::mp_root is correctly
+  # set on the document object. The variable could have already been
+  # set if we created the document ourselves
+  # (see ::MultipageHtml5Converter::convert_section), in which case it's
+  # not changed. If the documented is "nested", then we expect the parent
+  # document to already have it set. Otherwise, this is expected to be
+  # a top-level document, and we assign ourselves as its original converter.
+  def check_root(doc)
+    unless doc.mp_root
+      if doc.nested?
+        doc.mp_root = doc.parent_document.mp_root
+      else
+        doc.mp_root = self
+      end
+    end
+  end
+
   # Process Document (either the original full document or a processed page)
   def convert_document(node)
+
+    # make sure document has original converter reference
+    check_root(node)
+
     if node.processed
       # This node (an individual page) can now be handled by
       # Html5Converter.
@@ -166,8 +201,16 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       # Generate navigation links for all pages
       generate_nav_links(node)
 
-      # Create and save a skeleton document for generating the TOC lists.
-      @@full_outline = new_outline_doc(node)
+      # Create and save a skeleton document for generating the TOC lists,
+      # but don't attempt to create outline for nested documents.
+      unless node.nested?
+        # if the original converter has the @full_outline set already, we are about
+        # to replace it. That's not supposed to happen, and probably means we encountered
+        # a document structure we aren't prepared for. Log an error and move on.
+        logger.error "Regenerating document outline, something wrong?" if node.mp_root.full_outline
+        node.mp_root.full_outline = new_outline_doc(node)
+      end
+
       # Save the document catalog to use for each part/chapter page.
       @catalog = node.catalog
 
@@ -179,7 +222,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
           part = block
           part.convert
           text = %(<<#{part.id},#{part.captioned_title}>>)
-          if desc = block.attr('desc') then text << %( – #{desc}) end
+          if (desc = block.attr('desc')) then text << %( – #{desc}) end
           parts_list << Asciidoctor::ListItem.new(parts_list, text)
         end
       end
@@ -197,6 +240,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   # Process Document in embeddable mode (either the original full document or a
   # processed page)
   def convert_embedded(node)
+    # make sure document has original converter reference
+    check_root(node)
     if node.processed
       # This node (an individual page) can now be handled by
       # Html5Converter.
@@ -350,7 +395,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   end
 
   # From node, create a skeleton document that will be used to generate the
-  # TOC. This is first used to create a full skeleton (@@full_outline) from the
+  # TOC. This is first used to create a full skeleton (@full_outline) from the
   # original document (for_page=nil). Then it is used for each individual page
   # to create a second skeleton from the first. In this way, TOC entries are
   # included that are not part of the current page, or excluded if not
@@ -392,10 +437,10 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   # outline.
   def convert_outline(node, opts = {})
     doc = node.document
-    # Find this node in the @@full_outline skeleton document
-    page_node = @@full_outline.find_by(id: node.id).first
+    # Find this node in the @full_outline skeleton document
+    page_node = doc.mp_root.full_outline.find_by(id: node.id).first
     # Create a skeleton document for this particular page
-    custom_outline_doc = new_outline_doc(@@full_outline, for_page: page_node)
+    custom_outline_doc = new_outline_doc(doc.mp_root.full_outline, for_page: page_node)
     opts[:page_id] = node.id
     # Generate an extra TOC entry for the root page. Add additional styling if
     # the current page is the root page.
@@ -454,6 +499,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       if node.parent.respond_to?(:numbered) && node.parent.numbered
         page.sectnum = node.parent.sectnum
       end
+
+      page.mp_root = doc.mp_root
 
       # Process node according to mplevel
       if node.mplevel == :branch
