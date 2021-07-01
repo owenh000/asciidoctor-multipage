@@ -201,9 +201,8 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       # Generate navigation links for all pages
       generate_nav_links(node)
 
-      # Create and save a skeleton document for generating the TOC lists.
-
-      # don't attempt to create outline for nested documents.
+      # Create and save a skeleton document for generating the TOC lists,
+      # but don't attempt to create outline for nested documents.
       unless node.nested?
         # if the original converter has the @full_outline set already, we are about
         # to replace it. That's not supposed to happen, and probably means we encountered
