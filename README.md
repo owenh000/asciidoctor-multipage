@@ -104,6 +104,12 @@ To anyone else interested in contributing, please consider:
 
 - To install dependencies, run `bundler install`.
 - To run tests, run `bundler exec rake`.
+- To run only a specific black-box document test, run `bundler exec rake test
+  BB_TEST_ONLY=sample`, where `sample` is the name of the test to run.
+- When code modifications are expected to cause a change in HTML output, or
+  when a new black-box test is added, run `bundler exec rake test
+  BB_UPDATE_FILES=1` to generate (or update) output HTML files for the
+  black-box tests.
 - To run tests against multiple versions of Asciidoctor:
   1. run `bundler exec appraisal install` to install dependencies and
   2. run `bundler exec appraisal rake` to run the tests.
