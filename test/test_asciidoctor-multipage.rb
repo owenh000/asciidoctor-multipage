@@ -24,7 +24,6 @@ class AsciidoctorMultipageTest < Minitest::Test
         page_path_after = 'test/out/' + page.id + '.html'
         File.open(page_path_after) do |fa|
           if update_files > 0
-            # Update output files--currently used only manually
             File.open(page_path_before, 'w') do |fb|
               fb.write(fa.read())
             end
