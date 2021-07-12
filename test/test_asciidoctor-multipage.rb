@@ -5,8 +5,8 @@ require 'asciidoctor-multipage'
 class AsciidoctorMultipageTest < Minitest::Test
   def test_black_box_docs
     dir = 'test/black-box-docs'
-    test_only = ENV["MP_TEST_ONLY"]
-    update_files = ENV["MP_UPDATE_FILES"].to_i
+    test_only = ENV["BB_TEST_ONLY"]
+    update_files = ENV["BB_UPDATE_FILES"].to_i
     Dir.foreach(dir) do |filename|
       next if filename == '.' or filename == '..'
       doc_path = File.join(dir, filename)
