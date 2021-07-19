@@ -600,6 +600,10 @@ class MultipageHtml5CSS < Asciidoctor::Extensions::DocinfoProcessor
   at_location :head
 
   def process doc
+    # Disable this entirely if the multipage-disable-css attribute is set
+    if doc.attr('multipage-disable-css')
+      return
+    end
     css = []
     # Style Table Of Contents entry for current page
     css << %(.toc-current{font-weight: bold;})

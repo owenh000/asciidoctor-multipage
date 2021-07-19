@@ -80,8 +80,14 @@ The following attributes can be used to adjust the extension's behavior:
   equal to or greater than the values of all parent levels.
 - The `desc` attribute can be used for any section to provide a description
   when the section is listed on its parent landing page.
+- Set the `multipage-disable-css` *document attribute* if you are using a
+  custom stylesheet. You will need to include your own rules for styling the
+  elements that are specific to multipage output. The default behavior (without
+  this attribute set) is to add a few CSS rules in the document header just
+  after the regular stylesheet—whether linked or embedded, default or
+  custom—using an automatically registered DocinfoProcessor extension.
 
-For an example of the above attributes in use, see
+For an example of the above attributes in use (aside from the last one), see
 `test/black-box-docs/sample/sample.adoc`.
 
 ## Sponsors and contributing
