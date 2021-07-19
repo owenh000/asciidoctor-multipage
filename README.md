@@ -78,8 +78,8 @@ The following attributes can be used to adjust the extension's behavior:
 - The `multipage-level` *section attribute* specifies the section level to use
   for splitting the children of that section only. The integer given must be
   equal to or greater than the values of all parent levels.
-- The `desc` attribute can be used for any section to provide a description
-  when the section is listed on its parent landing page.
+- The `desc` *section attribute* can be used to provide a description for a
+  section when it is listed on its parent landing page.
 - Set the `multipage-disable-css` *document attribute* if you are using a
   custom stylesheet. You will need to include your own rules for styling the
   elements that are specific to multipage output. The default behavior (without
