@@ -90,21 +90,23 @@ The following attributes can be used to adjust the extension's behavior:
 For an example of the above attributes in use (aside from the last one), see
 `test/black-box-docs/sample/sample.adoc`.
 
-## Sponsors and contributing
+## Contributing
 
-To my current sponsor, thank you for your support! ✨
+If this project is useful to you, please consider supporting it through [GitHub
+Sponsors](https://github.com/owenh000),
+[Liberapay](https://liberapay.com/owenh), or [some other
+way](https://owenh.net/support).
 
-To anyone else interested in contributing, please consider:
+Other ways to contribute:
 
-- sharing this project with someone else who may be interested;
-- contributing a fix for a currently open
+- Share this project with someone else who may be interested
+- Contribute a fix for a currently open
   [issue](https://github.com/owenh000/asciidoctor-multipage/issues) (if any)
   using a GitHub pull request (please discuss before working on any large
-  changes);
-- opening a new issue for a problem you've discovered or a possible
-  enhancement; and/or
-- sponsoring my work through [GitHub Sponsors](https://github.com/owenh000)
-  (and see also [owenh.net/support](https://owenh.net/support)).
+  changes)
+- Open a new issue for a problem you've discovered or a possible enhancement
+
+Thank you for your support! ✨
 
 ## Development
 
