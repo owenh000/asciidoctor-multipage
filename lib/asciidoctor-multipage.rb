@@ -584,7 +584,6 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
     # Write remaining part/chapter pages
     outdir = ::File.dirname(target)
     ext = ::File.extname(target)
-    target_name = ::File.basename(target, ext)
     @pages.each do |doc|
       chapter_target = doc.id + ext
       outfile = ::File.join(outdir, chapter_target)
