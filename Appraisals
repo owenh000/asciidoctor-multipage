@@ -17,3 +17,7 @@ end
 appraise "asciidoctor-2.0.15" do
   gem "asciidoctor", "2.0.15"
 end
+
+appraise "asciidoctor-2.0.16" do
+  gem "asciidoctor", "2.0.16"
+end
