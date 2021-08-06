@@ -33,7 +33,10 @@ Footnotes are currently not supported. See [issue
 
 ## Installation
 
-Install the gem by adding it to your project's Gemfile or gemspec and running Bundler, or install it directly:
+This extension is published on RubyGems as
+[asciidoctor-multipage](https://rubygems.org/gems/asciidoctor-multipage).
+Install the gem by adding it to your project's Gemfile or gemspec and running
+Bundler. Or install it directly:
 
 ```
 $ gem install asciidoctor-multipage
