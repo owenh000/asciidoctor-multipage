@@ -28,8 +28,10 @@ from a single document.
 
 ## Notes and limitations
 
-Footnotes are currently not supported. See [issue
-#3](https://github.com/owenh000/asciidoctor-multipage/issues/3).
+- Footnotes are currently not supported. See [issue
+  #3](https://github.com/owenh000/asciidoctor-multipage/issues/3).
+- Asciidoctor's `--template-dir` option is currently not supported. See [issue
+  #19](https://github.com/owenh000/asciidoctor-multipage/issues/19).
 
 ## Installation
 
