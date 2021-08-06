@@ -1,13 +1,9 @@
 # asciidoctor-multipage
 
-A multipage HTML converter for Asciidoctor—extends the Html5Converter to
-generate multiple HTML pages from the document tree.
-
-See also:
-
-- <https://rubygems.org/gems/asciidoctor-multipage>
-- <https://github.com/asciidoctor/asciidoctor/issues/626>
-- <https://github.com/asciidoctor/asciidoctor-extensions-lab/pull/96>
+*asciidoctor-multipage* is an extension for
+[Asciidoctor](https://asciidoctor.org/) that adds a configurable multipage HTML
+converter. It extends the stock HTML converter to generate multiple HTML pages
+from a single document.
 
 ## Features
 
@@ -139,6 +135,11 @@ Thank you for your support! ✨
   2. run `bundler exec appraisal generate --travis`,
   3. update `.travis.yml` using the output from the previous command, and
   4. commit the changes.
+
+## See also
+
+- <https://owenh.net/asciidoctor-multipage>
+- <https://github.com/asciidoctor/asciidoctor/issues/626>
 
 ## Copyright and License
 
