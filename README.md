@@ -72,7 +72,10 @@ The following attributes can be used to adjust the extension's behavior:
 
 - The `multipage-level` *document attribute* specifies the section level at
   which the book is split into separate pages. The value should be an integer
-  and matches the Asciidoctor levels:
+  and matches the Asciidoctor levels. Note that as a physical book would
+  normally only have page breaks for the top one or two levels in the hierarchy
+  (such as *part* and *chapter* or *chapter* and *section*), a
+  `multipage-level` value greater than 2 is generally not recommended.
   - `0` splits into parts,
   - `1` splits into chapters (the default),
   - `2` splits into sections, etc.
