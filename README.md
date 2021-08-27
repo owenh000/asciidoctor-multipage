@@ -76,9 +76,9 @@ The following attributes can be used to adjust the extension's behavior:
   normally only have page breaks for the top one or two levels in the hierarchy
   (such as *part* and *chapter* or *chapter* and *section*), a
   `multipage-level` value greater than 2 is generally not recommended.
-  - `0` splits into parts,
-  - `1` splits into chapters (the default),
-  - `2` splits into sections, etc.
+  - `0` splits into parts (h1),
+  - `1` splits into chapters (h2)—the default,
+  - `2` splits into sections (h3), etc.
 - The `multipage-level` *section attribute* specifies the section level to use
   for splitting the children of that section only. The integer given must be
   equal to or greater than the values of all parent levels.
