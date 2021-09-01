@@ -3,7 +3,17 @@
 *asciidoctor-multipage* is an extension for
 [Asciidoctor](https://asciidoctor.org/) that adds a configurable multipage HTML
 converter. It extends the stock HTML converter to generate multiple HTML pages
-from a single document.
+from a single, large source document. The behavior is similar to a printed book
+where top levels (such as parts and chapters) are separated by page breaks (and
+perhaps blank pages) and lower levels (such as sections and subsections) are
+all included in a single chunk with styled headers to establish a visual
+hierarchy within the chunk.
+
+This extension has also been used to generate a hierarchical *website* (from a
+content perspective, essentially multiple documents) from a single Asciidoctor
+document. While in some cases this might work fine (and you are free to use it
+this way), please understand that it is designed to work with a single,
+well-structured Asciidoctor document rather than as a website generator.
 
 ## Features
 
