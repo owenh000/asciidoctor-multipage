@@ -66,7 +66,7 @@ Be sure to use Asciidoctor v2.0.11 or later.
 
 ```
 $ asciidoctor -V
-Asciidoctor 2.0.12 [https://asciidoctor.org]
+Asciidoctor 2.0.11 [https://asciidoctor.org]
 ```
 
 Use Asciidoctor's `-r` option to require `asciidoctor-multipage` and the `-b`
