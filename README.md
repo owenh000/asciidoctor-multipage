@@ -15,6 +15,9 @@ document. While in some cases this might work fine (and you are free to use it
 this way), please understand that it is designed to work with a single,
 well-structured Asciidoctor document rather than as a website generator.
 
+For an example of this extension in use, see
+<https://owenh.net/nxlog-user-guide.html>.
+
 ## Features
 
 - Generates a root (top level) landing page with a list of child sections.
