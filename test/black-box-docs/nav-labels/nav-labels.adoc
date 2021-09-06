@@ -1,0 +1,17 @@
+= Change Navigation Labels Test Document
+:doctype: book
+:toc: left
+:multipage-nav-previous-label: Go back
+:multipage-nav-up-label: Go up
+:multipage-nav-home-label: Go home
+:multipage-nav-next-label: Go forward
+
+= Part 1
+
+== Chapter 1
+
+This is chapter one.
+
+== Chapter 2
+
+This is chapter two.
