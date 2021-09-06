@@ -81,7 +81,9 @@ $ asciidoctor -r asciidoctor-multipage -b multipage_html5 \
 
 ## Adjusting behavior
 
-The following attributes can be used to adjust the extension's behavior:
+The `multipage-level` and `desc` attributes are the most important for using
+this extension. For an example of the these attributes in use, see
+`test/black-box-docs/sample/sample.adoc`. These attributes work as follows:
 
 - The `multipage-level` *document attribute* specifies the section level at
   which the book is split into separate pages. The value should be an integer
@@ -97,15 +99,20 @@ The following attributes can be used to adjust the extension's behavior:
   equal to or greater than the values of all parent levels.
 - The `desc` *section attribute* can be used to provide a description for a
   section when it is listed on its parent landing page.
+
+Some additional attributes are available for customizing the extension's
+behavior:
+
 - Set the `multipage-disable-css` *document attribute* if you are using a
   custom stylesheet. You will need to include your own rules for styling the
   elements that are specific to multipage output. The default behavior (without
   this attribute set) is to add a few CSS rules in the document header just
   after the regular stylesheet—whether linked or embedded, default or
   custom—using an automatically registered DocinfoProcessor extension.
-
-For an example of the above attributes in use (aside from the last one), see
-`test/black-box-docs/sample/sample.adoc`.
+- To change the navigation labels (as might be necessary for localization), use
+  the `multipage-nav-previous-label`, `multipage-nav-up-label`,
+  `multipage-nav-home-label`, and `multipage-nav-next-label` *document
+  attributes*. See `test/black-box-docs/nav-labels/nav-labels.adoc`.
 
 ## Contributing
 
