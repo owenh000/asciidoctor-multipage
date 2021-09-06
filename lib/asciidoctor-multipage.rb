@@ -95,7 +95,7 @@ class Asciidoctor::Section
         %(#{@numeral}#{append})
       end
     else # @level == 0
-      %(#{Asciidoctor::Helpers.int_to_roman @numeral}#{append})
+      %(#{@numeral}#{append})
     end
   end
 end
