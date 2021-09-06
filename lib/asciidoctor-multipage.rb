@@ -262,14 +262,14 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
         # NOTE: There are some non-breaking spaces (U+00A0) below, in
         # the "links <<" lines and "links.join" line.
         if previous_page != parent_page
-          links << %(← Previous: <<#{previous_page.id}>>)
+          links << %(← #{doc.attr('multipage-nav-previous-label') || "Previous"}: <<#{previous_page.id}>>)
         end
-        links << %(↑ Up: <<#{parent_page.id}>>)
-        links << %(⌂ Home: <<#{home_page.id}>>) if home_page != parent_page
+        links << %(↑ #{doc.attr('multipage-nav-up-label') || "Up"}: <<#{parent_page.id}>>)
+        links << %(⌂ #{doc.attr('multipage-nav-home-label') || "Home"}: <<#{home_page.id}>>) if home_page != parent_page
       end
       if page_index != pages.length-1
         next_page = pages[page_index+1]
-        links << %(Next: <<#{next_page.id}>> →)
+        links << %(#{doc.attr('multipage-nav-next-label') || "Next"}: <<#{next_page.id}>> →)
       end
       block = Asciidoctor::Block.new(parent = doc,
                                      context = :paragraph,
