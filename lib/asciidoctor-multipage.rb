@@ -85,16 +85,10 @@ class Asciidoctor::Section
   # Sections. The sectnum is saved in section() below.
   def sectnum(delimiter = '.', append = nil)
     append ||= (append == false ? '' : delimiter)
-    if @level == 1
-      %(#{@numeral}#{append})
-    elsif @level > 1
-      if @parent.class == Asciidoctor::Section ||
-         (@mplevel && @parent.class == Asciidoctor::Document)
+    if @level > 1 and @parent.class == Asciidoctor::Section ||
+                      (@mplevel && @parent.class == Asciidoctor::Document)
         %(#{@parent.sectnum(delimiter)}#{@numeral}#{append})
-      else
-        %(#{@numeral}#{append})
-      end
-    else # @level == 0
+    else
       %(#{@numeral}#{append})
     end
   end
