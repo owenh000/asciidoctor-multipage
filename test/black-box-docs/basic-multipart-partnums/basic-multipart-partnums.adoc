@@ -1,0 +1,54 @@
+= Basic Multipart Test
+:doctype: book
+:toc: left
+:partnums:
+
+This tests a basic multipart book with pages split at the default level.
+
+= Part 1
+
+== Chapter 1
+
+Chapter 1 text
+
+=== Section 1-1
+
+Section 1-1 text
+
+=== Section 1-2
+
+Section 1-2 text
+
+== Chapter 2
+
+=== Section 2-1
+
+Section 2-1 text
+
+=== Section 2-2
+
+Section 2-2 text
+
+= Part 2
+
+== Chapter 3
+
+Chapter 3 text
+
+=== Section 3-1
+
+Section 3-1 text
+
+=== Section 3-2
+
+Section 3-2 text
+
+== Chapter 4
+
+=== Section 4-1
+
+Section 4-1 text
+
+=== Section 4-2
+
+Section 4-2 text
