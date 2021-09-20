@@ -109,7 +109,7 @@ behavior:
   this attribute set) is to add a few CSS rules in the document header just
   after the regular stylesheet—whether linked or embedded, default or
   custom—using an automatically registered DocinfoProcessor extension.
-- To change the navigation labels (as might be necessary for localization), use
+- To change the navigation labels, use
   the `multipage-nav-previous-label`, `multipage-nav-up-label`,
   `multipage-nav-home-label`, and `multipage-nav-next-label` *document
   attributes*. See `test/black-box-docs/nav-labels/nav-labels.adoc`.
