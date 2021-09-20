@@ -262,14 +262,14 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
         # NOTE: There are some non-breaking spaces (U+00A0) below, in
         # the "links <<" lines and "links.join" line.
         if previous_page != parent_page
-          links << %(← #{doc.attr('multipage-nav-previous-label') || "Previous"}: <<#{previous_page.id}>>)
+          links << %(← #{doc.attr('multipage-nav-previous-label') || "Previous"}: <<#{previous_page.id},#{previous_page.captioned_title}>>)
         end
-        links << %(↑ #{doc.attr('multipage-nav-up-label') || "Up"}: <<#{parent_page.id}>>)
-        links << %(⌂ #{doc.attr('multipage-nav-home-label') || "Home"}: <<#{home_page.id}>>) if home_page != parent_page
+        links << %(↑ #{doc.attr('multipage-nav-up-label') || "Up"}: <<#{parent_page.id},#{parent_page.captioned_title}>>)
+        links << %(⌂ #{doc.attr('multipage-nav-home-label') || "Home"}: <<#{home_page.id},#{home_page.captioned_title}>>) if home_page != parent_page
       end
       if page_index != pages.length-1
         next_page = pages[page_index+1]
-        links << %(#{doc.attr('multipage-nav-next-label') || "Next"}: <<#{next_page.id}>> →)
+        links << %(#{doc.attr('multipage-nav-next-label') || "Next"}: <<#{next_page.id},#{next_page.captioned_title}>> →)
       end
       block = Asciidoctor::Block.new(parent = doc,
                                      context = :paragraph,
@@ -356,9 +356,17 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       else
         attrs = node.role ? %( class="#{node.role}") : ''
         unless (text = node.text)
-          refid = node.attributes['refid']
-          if AbstractNode === (ref = (@refs ||= node.document.catalog[:refs])[refid])
-            text = (ref.xreftext node.attr('xrefstyle')) || %([#{refid}])
+          if AbstractNode === (ref = (@refs ||= node.document.catalog[:refs])[refid = node.attributes['refid']] || (refid.nil_or_empty? ? (top = get_root_document node) : nil))
+            if (@resolving_xref ||= (outer = true)) && outer
+              if (text = ref.xreftext node.attr 'xrefstyle', nil, true)
+                text = text.gsub DropAnchorRx, '' if text.include? '<a'
+              else
+                text = top ? '[^top]' : %([#{refid}])
+              end
+              @resolving_xref = nil
+            else
+              text = top ? '[^top]' : %([#{refid}])
+            end
           else
             text = %([#{refid}])
           end
