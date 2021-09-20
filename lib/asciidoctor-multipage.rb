@@ -396,7 +396,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
   # applicable for the current page.
   def new_outline_doc(node, new_parent:nil, for_page:nil)
     if node.class == Document
-      new_document = Document.new([])
+      new_document = Document.new([], {:doctype => node.doctype})
       new_document.mplevel = node.mplevel
       new_document.id = node.id
       new_document.update_attributes(node.attributes)
@@ -413,6 +413,7 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
                                 level = node.level,
                                 numbered = node.numbered)
       new_section.id = node.id
+      new_section.sectname = node.sectname
       new_section.caption = node.caption
       new_section.title = node.instance_variable_get(:@title)
       new_section.mplevel = node.mplevel
