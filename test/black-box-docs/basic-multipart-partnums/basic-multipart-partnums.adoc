@@ -2,6 +2,7 @@
 :doctype: book
 :toc: left
 :partnums:
+:part-signifier: Part
 
 This tests a basic multipart book with pages split at the default level.
 
