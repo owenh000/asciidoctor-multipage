@@ -1,5 +1,8 @@
 # asciidoctor-multipage
 
+[![Build
+Status](https://app.travis-ci.com/owenh000/asciidoctor-multipage.svg?branch=master)](https://app.travis-ci.com/owenh000/asciidoctor-multipage)
+
 *asciidoctor-multipage* is an extension for
 [Asciidoctor](https://asciidoctor.org/) that adds a configurable multipage HTML
 converter. It extends the stock HTML converter to generate multiple HTML pages
