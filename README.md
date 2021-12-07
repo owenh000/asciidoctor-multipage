@@ -76,7 +76,7 @@ $ asciidoctor -V
 Asciidoctor 2.0.11 [https://asciidoctor.org]
 ```
 
-The following command generates HTML output from a sample document; view the 
+The following command generates HTML output from a sample document; view the
 output by loading `test/out/sample.html` in a browser.
 
 ```
