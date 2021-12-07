@@ -1,5 +1,6 @@
 # coding: utf-8
 
+require 'asciidoctor'
 require 'asciidoctor/converter/html5'
 
 class Asciidoctor::AbstractBlock
