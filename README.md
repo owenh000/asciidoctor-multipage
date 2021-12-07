@@ -79,6 +79,13 @@ output by loading `test/out/sample.html` in a browser.
 $ asciidoctor-multipage -D test/out test/black-box-docs/sample/sample.adoc
 ```
 
+Alternatively, use Asciidoctor's `--require` option like this:
+
+```
+$ asciidoctor -r asciidoctor-multipage -b multipage_html5 \
+    -D test/out test/black-box-docs/sample/sample.adoc
+```
+
 ## Adjusting behavior
 
 The `multipage-level` and `desc` attributes are the most important for using
