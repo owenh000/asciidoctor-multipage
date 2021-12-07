@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+# This executable is based on `bin/asciidoctor-pdf` from the
+# asciidoctor/asciidoctor-pdf project. Please consult that file for
+# potential updates.
+
+require 'asciidoctor-multipage'
+require 'asciidoctor-multipage/version'
+require 'asciidoctor/cli'
+
+options = Asciidoctor::Cli::Options.new backend: 'multipage_html5'
+
+# FIXME (from asciidoctor-pdf) provide an API in Asciidoctor for sub-components to print version information
+unless ARGV != ['-v'] && (ARGV & ['-V', '--version']).empty?
+  $stdout.write %(Asciidoctor Multipage #{AsciidoctorMultipage::VERSION} using )
+  options.print_version
+  exit 0
+end
+
+# FIXME (from bespoke) This is a really bizarre API. Please make me simpler.
+if Integer === (result = options.parse! ARGV)
+  exit result
+else
+  invoker = Asciidoctor::Cli::Invoker.new options
+  GC.start
+  invoker.invoke!
+  exit invoker.code
+end
