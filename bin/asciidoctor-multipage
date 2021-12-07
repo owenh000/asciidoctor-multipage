@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+# This executable is based on `bin/asciidoctor-pdf` from the
+# asciidoctor/asciidoctor-pdf project. Please consult that file for
+# potential updates.
+
 require 'asciidoctor-multipage'
 require 'asciidoctor-multipage/version'
 require 'asciidoctor/cli'
