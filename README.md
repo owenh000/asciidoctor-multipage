@@ -179,10 +179,11 @@ Thank you for your support! ✨
 
 - <https://owenh.net/asciidoctor-multipage>
 - <https://github.com/asciidoctor/asciidoctor/issues/626>
+- <https://www.rubydoc.info/gems/asciidoctor>
 
 ## Copyright and License
 
-Copyright 2019-2021 Owen T. Heisler. MIT license.
+Copyright 2019-2022 Owen T. Heisler. MIT license.
 
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
