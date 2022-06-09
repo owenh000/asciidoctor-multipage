@@ -158,6 +158,11 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       # This node is the original full document which has not yet been
       # processed; this is the entry point for the extension.
 
+      # Save a reference to the root document in the converter
+      # instance. This will be used to set the @requires_stylesheet
+      # variable on the root document in the write method.
+      @root_doc = node
+
       # Turn off extensions to avoid running them twice.
       # FIXME: DocinfoProcessor, InlineMacroProcessor, and Postprocessor
       # extensions should be retained. Is this possible with the API?
@@ -593,6 +598,12 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
       outfile = ::File.join(outdir, chapter_target)
       ::File.open(outfile, 'w') do |f|
         f.write(doc.convert)
+      end
+      if (doc.syntax_highlighter and
+          doc.syntax_highlighter.write_stylesheet? doc)
+        root_doc = doc.mp_root.instance_variable_get(:@root_doc)
+        root_doc.syntax_highlighter.instance_variable_set(
+          :@requires_stylesheet, true)
       end
     end
   end
