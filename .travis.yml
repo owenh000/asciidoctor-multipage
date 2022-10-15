@@ -9,3 +9,4 @@ gemfile:
   - gemfiles/asciidoctor_2.0.15.gemfile
   - gemfiles/asciidoctor_2.0.16.gemfile
   - gemfiles/asciidoctor_2.0.17.gemfile
+  - gemfiles/asciidoctor_2.0.18.gemfile
