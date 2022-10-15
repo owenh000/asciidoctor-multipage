@@ -157,9 +157,8 @@ Thank you for your support! ✨
   1. run `bundler exec appraisal install` to install dependencies and
   2. run `bundler exec appraisal rake` to run the tests.
 - To execute Asciidoctor with the extension (in its present local state) for
-  testing, run `bundler exec asciidoctor -r asciidoctor-multipage -b
-  multipage_html5 -D test/out test/black-box-docs/sample/sample.adoc` (for
-  example).
+  testing, run `bundler exec asciidoctor-multipage -D test/out
+  test/black-box-docs/sample/sample.adoc` (for example).
 - To build the current version, run `bundler exec rake build`; the gem will be
   placed in the `pkg/` directory.
 - To release a new version:
