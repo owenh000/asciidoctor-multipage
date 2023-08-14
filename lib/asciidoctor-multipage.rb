@@ -66,6 +66,9 @@ class Asciidoctor::Document
   # no need for a TOC. However, we override the Html5Converter outline() in
   # order to generate a custom TOC for each page with entries that span the
   # entire document.
+  #
+  # Prevent Ruby warning about redefining the method.
+  remove_method "sections?" if method_defined? "sections?"
   def sections?
     return true
   end
@@ -84,6 +87,9 @@ class Asciidoctor::Section
   # Extend sectnum() to use the Document's saved sectnum. Document objects
   # normally do not have sectnums, but here Documents are generated from
   # Sections. The sectnum is saved in section() below.
+  #
+  # Prevent Ruby warning about redefining the method.
+  remove_method "sectnum" if method_defined? "sectnum"
   def sectnum(delimiter = '.', append = nil)
     append ||= (append == false ? '' : delimiter)
     if @level > 1 and @parent.class == Asciidoctor::Section ||
