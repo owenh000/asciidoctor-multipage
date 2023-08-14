@@ -27,4 +27,4 @@ DEPENDENCIES
   rake (~> 13)
 
 BUNDLED WITH
-   2.2.18
+   2.3.15
