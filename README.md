@@ -170,8 +170,8 @@ Thank you for your support! ✨
      `.dev`), run `bundler lock`, and commit the changes.
 - To change versions of Asciidoctor to test against:
   1. update `Appraisals` as required,
-  2. run `bundler exec appraisal generate --travis`,
-  3. update `.travis.yml` using the output from the previous command, and
+  2. run `bundler exec appraisal generate`,
+  3. update `.travis.yml` as required, and
   4. commit the changes.
 
 ## See also
