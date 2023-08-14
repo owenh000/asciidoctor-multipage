@@ -18,9 +18,9 @@ task :check_lib_permissions do
       raise 'All bin/* files must be world readable'
     end
   end
-  Dir["lib/*.rb"].each do |filename|
+  Dir["lib/**/*.rb"].each do |filename|
     if !File.world_readable?(filename)
-      raise 'All lib/*.rb files must be world readable'
+      raise 'All lib/**/*.rb files must be world readable'
     end
   end
 end
