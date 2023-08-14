@@ -25,6 +25,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'minitest', '~> 5'
   s.add_development_dependency 'rake', '~> 13'
   s.add_runtime_dependency 'asciidoctor', '>= 2.0.11', '< 2.1'
-  s.date = '2022-06-09'
+  s.date = '2023-08-14'
   s.required_ruby_version = '>= 2.5'
 end
