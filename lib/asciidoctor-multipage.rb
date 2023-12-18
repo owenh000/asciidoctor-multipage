@@ -68,7 +68,10 @@ class Asciidoctor::Document
   # entire document.
   #
   # Prevent Ruby warning about redefining the method.
-  remove_method "sections?" if method_defined? "sections?"
+  begin
+    remove_method(:sections?)
+  rescue NameError
+  end
   def sections?
     return true
   end
