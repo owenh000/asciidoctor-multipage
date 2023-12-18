@@ -508,6 +508,11 @@ class MultipageHtml5Converter < Asciidoctor::Converter::Html5Converter
                                         :doctype => doc.doctype,
                                         :header_footer => !doc.attr?(:embedded),
                                         :safe => doc.safe})
+      # Manually remove stylesheet attribute if not set on original document
+      # (why is doc.attributes.clone not adequate?)
+      if ! doc.attributes.has_key?('stylesheet')
+        page.remove_attr('stylesheet')
+      end
       # Retain webfonts attribute (why is doc.attributes.clone not adequate?)
       page.set_attr('webfonts', doc.attr(:webfonts))
       # Save sectnum for use later (a Document object normally has no sectnum)
