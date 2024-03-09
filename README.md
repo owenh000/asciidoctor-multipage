@@ -4,8 +4,9 @@
 Status](https://app.travis-ci.com/owenh000/asciidoctor-multipage.svg?branch=master)](https://app.travis-ci.com/owenh000/asciidoctor-multipage)
 
 **This is free, open-source software! If you use asciidoctor-multipage, please
-consider [sponsoring or contributing in some other way](#contributing). Thank
-you!**
+consider [contributing](#contributing). In particular, if someone is
+interested in funding it, I would rewrite some parts of this extension to
+remove current limitations and resolve open issues.**
 
 *asciidoctor-multipage* is an extension for
 [Asciidoctor](https://asciidoctor.org/) that adds a configurable multipage HTML
