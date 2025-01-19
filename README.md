@@ -145,6 +145,13 @@ Other ways to contribute:
 
 Thank you for your support! ✨
 
+## Sponsors
+
+Thanks for the support of the following [GitSponsors](https://gitsponsors.com)
+sponsor (this is a third-party advertisement):
+
+[<img src="https://api.gitsponsors.com/api/badge/img?id=215657916" height="90">](https://api.gitsponsors.com/api/badge/link?p=JKMCWMYqIoi6rrXlRVufs+3P8T159sefR56wBU9J2BE7tx2T/Pq+VjtcPg9bEKs5ids2Ib1hRExE/tI4NrHGZz69lfKVxGxL8AR2x0nmbXqAhHL90tAQuOFJb8eU7VCaNMxWkl1rkBQCeQhQGd2JGg==)
+
 ## Development
 
 - To install dependencies, run `bundler install`.
