@@ -1,8 +1,5 @@
 # asciidoctor-multipage
 
-[![Build
-Status](https://app.travis-ci.com/owenh000/asciidoctor-multipage.svg?branch=master)](https://app.travis-ci.com/owenh000/asciidoctor-multipage)
-
 **This is free, open-source software! If you use asciidoctor-multipage, please
 consider [contributing](#contributing). In particular, if someone is
 interested in funding it, I would rewrite some parts of this extension to
@@ -172,9 +169,8 @@ Thank you for your support! ✨
      `.dev`), run `bundler lock`, and commit the changes.
 - To change versions of Asciidoctor to test against:
   1. update `Appraisals` as required,
-  2. run `bundler exec appraisal generate`,
-  3. update `.travis.yml` as required, and
-  4. commit the changes.
+  2. run `bundler exec appraisal generate`, and
+  3. commit the changes.
 
 ## See also
 
