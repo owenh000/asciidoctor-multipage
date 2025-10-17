@@ -15,3 +15,5 @@ gemfile:
   - gemfiles/asciidoctor_2.0.21.gemfile
   - gemfiles/asciidoctor_2.0.22.gemfile
   - gemfiles/asciidoctor_2.0.23.gemfile
+  - gemfiles/asciidoctor_2.0.24.gemfile
+  - gemfiles/asciidoctor_2.0.25.gemfile
