@@ -180,7 +180,7 @@ Thank you for your support! ✨
 
 ## Copyright and License
 
-Copyright 2019-2025 Owen T. Heisler. MIT license.
+Copyright 2019-2026 Owen T. Heisler. MIT license.
 
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
