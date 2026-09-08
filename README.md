@@ -6,6 +6,9 @@ interested in funding it, I would rewrite some parts of this extension to
 remove current limitations and resolve open issues (see [issue
 #46](https://github.com/owenh000/asciidoctor-multipage/issues/46)).**
 
+**If you are looking for alternatives to asciidoctor-multipage, you may be
+interested in [Antora](https://antora.org/).**
+
 *asciidoctor-multipage* is an extension for
 [Asciidoctor](https://asciidoctor.org/) that adds a configurable multipage HTML
 converter. It extends the stock HTML converter to generate multiple HTML pages
